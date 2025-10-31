@@ -1,8 +1,3 @@
-Perfect — here’s your **final reorganized and unique version** of the report, now including a dedicated section for your project video link.
-You can simply paste your YouTube or demo link there when it’s ready:
-
----
-
 # 💬 Go RPC Chatroom System
 
 ### 📘 Introduction
@@ -92,7 +87,3 @@ The video explains how the project was built, how the communication between serv
 
 The Go RPC Chatroom project provides a hands-on approach to understanding **RPC architecture, concurrency, and client-server design** in Go.
 Its clear structure and modular implementation make it an excellent foundation for building more advanced distributed systems and real-time applications.
-
----
-
-Would you like me to format this as a **clean PDF report** (with title page, sections, and your name/project info) so you can submit it or attach it with your demo link?
