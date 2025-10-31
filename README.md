@@ -1,70 +1,81 @@
-Here’s a rewritten version of your report with fresh phrasing and structure — it keeps the same meaning but reads as your own unique work:
+# 💬 Go RPC Chatroom System
+
+### 📘 Introduction
+
+The **Go RPC Chatroom** is a minimal yet instructive project that explores how **Remote Procedure Calls (RPC)** work in Go using the `net/rpc` package.
+It provides a working example of how multiple clients can communicate through a single coordinating server, illustrating the basics of distributed systems in a clean and extensible design.
 
 ---
 
-## 💬 Go RPC Chatroom
+### 🧩 System Structure
 
-This project is a lightweight chatroom built in **Go**, designed to showcase the core principles of **Remote Procedure Call (RPC)** communication using Go’s built-in `net/rpc` package.
-It provides a simple yet powerful demonstration of how clients and a central server can exchange data through remote function calls. [Watch the demo here.]
+This application is made up of two core components:
 
----
+1. **Server (`server.go`)**
 
-## 🧠 Overview
+   * Hosts an RPC service (`HelloService`) responsible for managing connections and processing messages from clients.
+   * Maintains a chat history and returns updates to connected users.
 
-The system is composed of two main files:
+2. **Client (`client.go`)**
 
-| File          | Purpose                                                                                  |
-| ------------- | ---------------------------------------------------------------------------------------- |
-| **server.go** | Runs the RPC service (`HelloService`), managing client connections and message handling. |
-| **client.go** | Connects to the RPC server, sends chat inputs, and receives the server’s responses.      |
+   * Connects to the RPC server over TCP.
+   * Sends user input to the server and displays the server’s response in real time.
 
-Communication happens over **TCP**, where each client interacts with the server via remote method calls — forming the backbone of a distributed chat environment.
+Together, these two programs demonstrate how Go can handle message passing and coordination through RPC communication.
 
 ---
 
-## ⚙️ Key Features
+### ⚙️ Core Features
 
-* 🛰️ **RPC Communication** – Implements a clear request/response workflow using Go’s `net/rpc` library.
-* 💬 **Interactive Chatting** – Clients can send their messages or names and get real-time responses.
-* 🔄 **Multi-Client Support** – Handles multiple users simultaneously through **goroutines**.
-* 🔧 **Scalable Structure** – Easily adaptable into a complete chat system with broadcasting or message storage.
+* 🛰️ **RPC Messaging System** – Built entirely on Go’s native `net/rpc` for seamless client-server communication.
+* 💬 **Interactive Exchange** – Users can send text or identifiers and receive instant replies from the server.
+* 🔄 **Concurrent Clients** – Supports multiple connections simultaneously via goroutines, allowing real-time chat interaction.
+* 🧱 **Expandable Framework** – Can be extended to include broadcasting, user management, or database-backed message storage.
 
 ---
 
-## 🏗️ Running the Project
+### 🚀 Getting Started
 
-### 1️⃣ Launch the Server
+#### Step 1: Run the Server
+
+Execute the following command in your terminal:
 
 ```bash
 go run server.go
 ```
 
-Expected output:
+You should see a message similar to:
 
 ```
-💬 Chat server active on port 1234...
-Type 'exit' to stop the server or 'clear' to reset chat history.
+Chat server started on port 1234
+Type 'exit' to stop the server or 'clear' to reset the chat log.
 ```
 
-### 2️⃣ Start the Client
+#### Step 2: Launch a Client
 
-In a separate terminal window:
+Open another terminal window and run:
 
 ```bash
 go run client.go
 ```
 
-Enter your name when prompted, then begin chatting 💬
-You can open multiple clients to simulate a multi-user chat session.
+After entering your name, you can start chatting immediately.
+Open several clients at once to simulate multiple participants in the chatroom.
 
 ---
 
-## 🧠 Behind the Scenes
+### 🧠 Internal Workflow
 
-* The server maintains a simple in-memory chat history.
-* Each connected client sends messages (via `ChatMessage` structs) through RPC calls.
-* The server records new messages and returns the updated conversation log to all clients in real time.
+1. Each client connects to the server through an RPC call.
+2. Messages are sent as structured data (`ChatMessage` objects).
+3. The server stores all messages in memory and distributes the updated chat history to every active client.
+
+This setup demonstrates the foundation of distributed communication—simple, concurrent, and easily extensible.
 
 ---
 
-Would you like me to make it sound a bit **more formal and technical** (like a report for a course submission) or **more casual and readable** (like a GitHub README)?
+### 🧩 Summary
+
+The Go RPC Chatroom project is more than just a small app—it’s a **hands-on guide** to understanding RPC concepts in Go.
+By separating the client and server logic, it provides a clean example of **request/response-based interaction** and concurrent networking using **goroutines**.
+It serves as an excellent starting point for anyone learning about **Go networking, RPC systems, or distributed architecture**.
