@@ -82,7 +82,7 @@ This mechanism demonstrates distributed communication through a simple and concu
 ### 🎥 Project Demonstration
 
 A full walkthrough video of the **Go RPC Chatroom** is available here:
-👉 **[Watch the Demo Video]([PASTE-YOUR-LINK-HERE](https://drive.google.com/file/d/1IvaWIaZOZgD7d2hqHDJvJe6bwSW29v1w/view?usp=drive_link))**
+👉 **[Watch the Demo Video](https://drive.google.com/file/d/1IvaWIaZOZgD7d2hqHDJvJe6bwSW29v1w/view?usp=drive_link)**
 
 The video explains how the project was built, how the communication between server and clients works, and includes a live demonstration of multiple users chatting in real time.
 
